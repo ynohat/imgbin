@@ -19,8 +19,10 @@ app.use(function (req, res) {
     ctx.fillText(line, 10, 10 + metrics.actualBoundingBoxAscent + (idx * lineHeight))
   });
 
+  res.status(200)
+  res.set('Content-Type', 'image/png')
+
   const png = canvas.createPNGStream()
-  png.on('end', () => res.end())
   png.pipe(res)
   console.log(`--------------------------------------------------------`)
 })
