@@ -1,8 +1,8 @@
-var express = require('express');
+var express = require('express')
 var cookieParser = require('cookie-parser')
 const { createCanvas } = require('node-canvas')
 
-const PORT = 8008
+const PORT = +(process.env.IMGBIN_PORT || 80)
 
 var app = express()
 app.use(cookieParser())
@@ -11,8 +11,8 @@ app.use(function (req, res) {
   var canvas = createCanvas(2048, 2048)
   const ctx = canvas.getContext('2d')
   ctx.font = '16px sans'
-  var metrics = ctx.measureText('Foo');
-  let lineHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent + 10;
+  var metrics = ctx.measureText('Foo')
+  let lineHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent + 10
 
   lines.forEach((line, idx) => {
     console.log(line);

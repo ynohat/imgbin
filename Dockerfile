@@ -10,4 +10,6 @@ RUN npm install && \
   apt-get remove -y --purge python3 python3-pip && \
   apt-get autoremove -y
 
+EXPOSE 80
+
 ENTRYPOINT ["node", "index.js"]
