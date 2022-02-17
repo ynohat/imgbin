@@ -2,7 +2,7 @@ var express = require('express')
 var cookieParser = require('cookie-parser')
 const { createCanvas } = require('node-canvas')
 
-const PORT = +(process.env.IMGBIN_PORT || 80)
+const PORT = process.env.PORT || 80
 
 var app = express()
 app.use(cookieParser())

@@ -11,5 +11,6 @@ RUN npm install && \
   apt-get autoremove -y
 
 EXPOSE 80
+ENV PORT=80
 
 ENTRYPOINT ["node", "index.js"]
