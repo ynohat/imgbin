@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 80
 var app = express()
 app.use(cookieParser())
 app.use(function (req, res) {
-  var lines = `${req.method} ${req.path}\n${Object.entries(req.headers).map(entry => entry.join(': ')).join("\n")}`.split("\n")
+  var lines = `${req.method} ${req.originalUrl}\n${Object.entries(req.headers).map(entry => entry.join(': ')).join("\n")}`.split("\n")
   var canvas = createCanvas(2048, 2048)
   const ctx = canvas.getContext('2d')
   ctx.font = '16px sans'
